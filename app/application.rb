@@ -1,4 +1,5 @@
 require_relative './item.rb'
+require 'pry'
 
 class Application
   @@items =[]
@@ -10,6 +11,7 @@ class Application
       i = req.path.split('/items/').last
       a = @@items.find{|x| x.name == i}
       if a != []
+        binding.pry
         resp.write "#{a.price}"
       else
         resp.write "Item not found"
