@@ -1,5 +1,5 @@
 require_relative './spec_helper'
-require 'pry'
+
 
 describe "Shopping Cart Rack App" do
   def app()
@@ -26,6 +26,6 @@ describe "Shopping Cart Rack App" do
       expect(last_response.body).to include("Item not found")
       expect(last_response.status).to be(400)
     end
-    binding.pry
+    
   end
 end
