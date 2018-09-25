@@ -3,7 +3,8 @@ require_relative './item.rb'
 class Application
   @@items =[]
   def call(env)
-    req = Rack::Response(env)
+    resp = Rack::Response.new
+    req = Rack::Request.new(env)
 
     if req.path.match(/items/)
       i = req.path.split('/items/').last
