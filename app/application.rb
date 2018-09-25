@@ -1,4 +1,4 @@
-require_relative './item.rb'
+#require_relative './item.rb'
 
 
 class Application
@@ -11,7 +11,6 @@ class Application
       i = req.path.split('/items/').last
       a = @@items.find{|x| x.name == i}
       if a != []
-
         resp.write "#{a.price}"
       else
         resp.write "Item not found"
